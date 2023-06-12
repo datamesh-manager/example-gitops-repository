@@ -1,0 +1,16 @@
+id: shelfwarmers_from_stock_updated
+providerTeamId: fulfillment
+providerDataProductId: stock_updated
+providerOutputPortId: glue_catalog_database_stock_updated_v1
+consumerTeamId: fulfillment
+consumerDataProductId: shelf_warmers
+status: active
+tags: []
+links: {}
+custom: {}
+purpose: Use stock updates to calculate shelf warmers
+terms: The consumer calls the data product max 10 times per day.
+startDate: "2023-01-01"
+endDate: "2024-01-01"
+noticePeriod: P3M
+nextReassessmentDate: "2024-01-01"

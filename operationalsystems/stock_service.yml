@@ -1,0 +1,9 @@
+id: stock-service
+name: Stock Service
+teamId: fulfillment
+tags:
+  - dev
+links:
+  api_docs: https://example.com/api/stock-service
+custom:
+  slack-channel: '#stock-service-public'

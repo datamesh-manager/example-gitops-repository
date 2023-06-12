@@ -1,0 +1,63 @@
+id: stock_updated
+name: Stock Updates
+description: Raw event data from stock_updated confluent kafka topic.
+teamId: fulfillment
+status: active
+archetype: raw
+maturity: raw
+links:
+  Discovery: https://2sn2r9up9e.execute-api.eu-central-1.amazonaws.com/prod
+  Documentation: http://example.com/datamesh/fulfillment/stock_updated
+custom:
+  platform: aws
+tags:
+  - kafka
+  - confluent
+  - athena
+  - glue
+  - s3
+inputPorts:
+  - id: kafka_stock_topic
+    name: kafka_stock_topic
+    description: Kafka Topic with Stock updates
+    operationalSystemId: stock-service
+    type: Kafka
+    location: stock topic
+    links:
+      Console: https://confluent.cloud
+    custom:
+      platform: confluent
+    tags:
+      - kafka
+      - confluent
+      - aws
+      - managed
+outputPorts:
+  - id: glue_catalog_database_stock_updated_v1
+    name: 'Glue Catalog Database: Stock Updates (v1)'
+    description: All stock updates represented as a Glue Catalog table
+    type: Glue
+    status: active
+    location: arn:aws:glue:eu-central-1:528115139298:table/fulfillment-stock-updated/stock_updated
+    links:
+      Athena Query Editor: https://eu-central-1.console.aws.amazon.com/athena/home?region=eu-central-1#/query-editor
+      Glue Table: https://eu-central-1.console.aws.amazon.com/glue/home?region=eu-central-1#/v2/data-catalog/tables/view/stock_updated?database=fulfillment-stock-updated&catalogId=528115139298
+    custom:
+      platform: aws
+    containsPii: false
+    tags:
+      - glue
+      - athena
+  - id: s3_bucket_stock_updated_v1
+    name: 'S3 Bucket: Stock Updates (v1)'
+    description: All stock updates represented as a S3 bucket
+    type: S3
+    status: active
+    location: arn:aws:s3:::fulfillment-stock-updated
+    links:
+      S3 Bucket: https://eu-north-1.console.aws.amazon.com/s3/buckets/fulfillment-stock-updated?region=eu-central-1&prefix=topics/stock/
+    custom:
+      platform: aws
+    containsPii: false
+    tags:
+      - s3

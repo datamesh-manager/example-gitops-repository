@@ -1,0 +1,10 @@
+id: fulfillment
+name: Fulfillment
+type: Domain Team
+members: []
+tags:
+  - dev
+links:
+  homepage: https://example.com/teams/fulfillment
+custom:
+  slack-channel: '#fulfillment'

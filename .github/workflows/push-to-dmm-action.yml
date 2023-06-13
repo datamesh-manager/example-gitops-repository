@@ -22,7 +22,8 @@ jobs:
             -H "accept: */*" \
             -H "x-api-key: $API_KEY" \
             -H "Content-Type: application/json" \
-            -d "$json"
+            -d "$json" \
+            -f
       - name: Push operational systems
         env: 
           API_KEY: ${{ secrets.DMM_API_KEY }}
@@ -37,9 +38,10 @@ jobs:
               -H "accept: */*" \
               -H "x-api-key: $API_KEY" \
               -H "Content-Type: application/json" \
-              -d "$json"
+              -d "$json" \
+              -f
           done
-      - name: Push dataproducts
+      - name: Push data products
         env: 
           API_KEY: ${{ secrets.DMM_API_KEY }}
         run: |
@@ -48,13 +50,28 @@ jobs:
           do
             id=$(yq .id $f)
             json=$(yq -o json $f)
-
-            echo "https://app.datamesh-manager.com/api/dataproducts/$id"
-
             curl -X 'PUT' \
               "https://app.datamesh-manager.com/api/dataproducts/$id" \
               -H "accept: */*" \
               -H "x-api-key: $API_KEY" \
               -H "Content-Type: application/json" \
-              -d "$json"
+              -d "$json" \
+              -f
+          done
+      - name: Push data contracts
+        env: 
+          API_KEY: ${{ secrets.DMM_API_KEY }}
+        run: |
+          files="./datacontracts/*.yml"
+          for f in $files
+          do
+            id=$(yq .id $f)
+            json=$(yq -o json $f)
+            curl -X 'PUT' \
+              "https://app.datamesh-manager.com/api/datacontracts/$id" \
+              -H "accept: */*" \
+              -H "x-api-key: $API_KEY" \
+              -H "Content-Type: application/json" \
+              -d "$json" \
+              -f
           done

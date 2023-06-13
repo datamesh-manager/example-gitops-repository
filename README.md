@@ -1,4 +1,4 @@
-# api-example-team
+# example-gitops-repository
 Think of this as a repository which holds all the configuration to configure the the [data mesh manager](https://www.datamesh-manager.com/) via GitHub Actions for a single domain team.
 
 Using this approach, data contracts could be requested by other teams by using pull requests containing new data contract files inside `./datacontracts`.

@@ -1,7 +1,9 @@
 id: fulfillment
 name: Fulfillment
 type: Domain Team
-members: []
+members:
+  - emailAddress: "alice@example.com"
+    role: "Data Product Owner"
 tags:
   - dev
 links:

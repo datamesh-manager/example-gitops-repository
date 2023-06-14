@@ -12,8 +12,12 @@ Teams, their operational systems and data products can just be put in their spec
 └── teams
     └── fulfillment.yml
 ```
-
-You can find the GitHub Action configuration [here](.github/workflows/push-to-dmm-action.yml).
 Technically, all example configurations are transformed to json with yq and sent to the data mesh manager with curl.
 
+## GitHub
+You can find the GitHub Action configuration [here](.github/workflows/push-to-dmm-action.yml).
 The API key of the data mesh manager of the corresponding organization has be to set as a repository variable named `DMM_API_KEY`.
+
+## GitLab
+You can find the GitLab CI configuration [here](.gitlab-ci.yml).
+The API key of the data mesh manager of the corresponding organization has be to set as a repository variable named `GITOPS_EXAMPLE_API_KEY`.

@@ -1,5 +1,5 @@
 # example-gitops-repository
-Think of this as a repository which holds all the configuration to configure the the [data mesh manager](https://www.datamesh-manager.com/) via GitHub Actions for a single domain team or a whole organization.
+Think of this as a repository which holds all the configuration to configure the the [Data Mesh Manager](https://www.datamesh-manager.com/) via GitHub Actions for a single domain team or a whole organization.
 
 Teams, their operational systems and data products can just be put in their specific folders:
 
@@ -12,7 +12,7 @@ Teams, their operational systems and data products can just be put in their spec
 └── teams
     └── fulfillment.yml
 ```
-Technically, all example configurations are transformed to json with yq and sent to the data mesh manager with curl.
+Technically, all example configurations are transformed to json with yq and sent to the Data Mesh Manager with curl.
 
 ## GitHub
 You can find the GitHub Action configuration [here](.github/workflows/push-to-dmm-action.yml).

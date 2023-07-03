@@ -52,7 +52,7 @@ jobs:
           files="./dataproducts/*.yml"
           for f in $files
           do
-            id=$(yq .id $f)
+            id=$(yq .info.id $f)
             json=$(yq -o json $f)
             curl -X 'PUT' \
               "https://app.datamesh-manager.com/api/dataproducts/$id" \

@@ -1,10 +1,12 @@
-id: shelf_warmers
-name: Shelf Warmers
-description: Calculated shelfwarmers. Read about calculation in docs.
-teamId: fulfillment
-status: active
-archetype: customer-aligned
-maturity: managed
+info:
+  id: shelf_warmers
+  name: Shelf Warmers
+  description: Calculated shelfwarmers. Read about calculation in docs.
+  status: active
+  archetype: consumer-aligned
+  maturity: managed
+owner:
+  teamId: fulfillment
 links:
   Discovery: https://qbffyn0bze.execute-api.eu-central-1.amazonaws.com/prod
   Documentation: http://example.com/datamesh/fulfillment/shelf_warmers

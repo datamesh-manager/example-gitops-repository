@@ -22,7 +22,7 @@ inputPorts:
   - id: kafka_stock_topic
     name: kafka_stock_topic
     description: Kafka Topic with Stock updates
-    operationalSystemId: stock-service
+    sourceSystemId: stock-service
     type: Kafka
     location: stock topic
     links:

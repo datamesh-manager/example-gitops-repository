@@ -25,14 +25,14 @@ push-to-dmm:
           -f
       done
 
-      # operational systems
-      files="./operationalsystems/*.yml"
+      # source systems
+      files="./sourcesystems/*.yml"
       for f in $files
       do
         id=$(yq .id $f)
         json=$(yq -o json $f)
         curl -X 'PUT' \
-          "https://app.datamesh-manager.com/api/operationalsystems/$id" \
+          "https://app.datamesh-manager.com/api/sourcesystems/$id" \
           -H "accept: */*" \
           -H "x-api-key: $GITOPS_EXAMPLE_API_KEY" \
           -H "Content-Type: application/json" \

@@ -91,7 +91,8 @@ outputPorts:
                 },
                 "updated_at": {
                     "description": "Timestamp where this information were created",
-                    "type": "string"
+                    "type": "string",
+                    "format": "date-time"
                 }
             }
         }]

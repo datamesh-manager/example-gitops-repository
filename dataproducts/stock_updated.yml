@@ -50,6 +50,27 @@ outputPorts:
     tags:
       - glue
       - athena
+    schema:
+      type: custom # avro schema
+      specification: >
+        [{
+            "type": "record",
+            "name": "StockUpdated",
+            "namespace": "fulfillment",
+            "fields": [{
+                "name": "available",
+                "type": "int"
+            }, {
+                "name": "location",
+                "type": "string"
+            }, {
+                "name": "sku",
+                "type": "string"
+            }, {
+                "name": "updated_at",
+                "type": "timestamp-micros"
+            }]
+        }]
   - id: s3_bucket_stock_updated_v1
     name: 'S3 Bucket: Stock Updates (v1)'
     description: All stock updates represented as a S3 bucket
@@ -63,3 +84,30 @@ outputPorts:
     containsPii: false
     tags:
       - s3
+    schema:
+      type: custom # json schema
+      specification: >
+        [{
+            "$id": "https://example.com/fulfillment-stock-updated.schema.json",
+            "$schema": "http://json-schema.org/draft-07/schema#",
+            "title": "fulfillment-stock-updated",
+            "type": "object",
+            "properties": {
+                "sku": {
+                    "description": "Stock Keeping Unit",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "The location (e.g. store) of the shelf warmers",
+                    "type": "string"
+                },
+                "available": {
+                    "description": "Number of available shelf warmers in the specified location",
+                    "type": "integer"
+                },
+                "updated_at": {
+                    "description": "Timestamp where this information were created",
+                    "type": "string"
+                }
+            }
+        }]

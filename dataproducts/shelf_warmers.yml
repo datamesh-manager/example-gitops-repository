@@ -69,7 +69,7 @@ outputPorts:
     tags:
       - s3
     schema:
-      type: custom # json schema
+      type: jsonschema
       specification: >
         [{
             "$id": "https://example.com/fulfillment-stock-updated.schema.json",

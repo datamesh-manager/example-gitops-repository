@@ -35,7 +35,7 @@ outputPorts:
       - glue
       - athena
     schema:
-      type: custom # avro schema
+      type: avro
       specification: >
         [{
             "type": "record",

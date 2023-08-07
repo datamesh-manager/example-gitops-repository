@@ -39,7 +39,7 @@ outputPorts:
       specification: >
         [{
             "type": "record",
-            "name": "StockUpdated",
+            "name": "ShelfWarmers",
             "namespace": "fulfillment",
             "fields": [{
                 "name": "available",
@@ -55,6 +55,14 @@ outputPorts:
                 "type": "timestamp-micros"
             }]
         }]
+    samples:
+      - type: csv
+        model: fulfillment.ShelfWarmers
+        description: Sample data for the glue database table
+        data: >
+          available,location,sku,updated_at
+          10,store_3,102,1691419444314123
+          297,store_3,9887,1691419444311112
   - id: s3_bucket_shelf_warmers_v1
     name: 'S3 Bucket: Shelf Warmers (v1)'
     description: All Shelf Warmers represented as a Glue Catalog table
@@ -74,7 +82,7 @@ outputPorts:
         [{
             "$id": "https://example.com/fulfillment-stock-updated.schema.json",
             "$schema": "http://json-schema.org/draft-07/schema#",
-            "title": "fulfillment-stock-updated",
+            "title": "fulfillment-shelf-warmers",
             "type": "object",
             "properties": {
                 "sku": {
@@ -96,3 +104,20 @@ outputPorts:
                 }
             }
         }]
+    samples:
+      - type: json
+        model: fulfillment-shelf-warmers
+        description: Sample data for the s3 bucket
+        data: >
+          [{
+            "available": 10,
+            "location": "store_3",
+            "sku": "102"
+            "updated_at": "2023-08-07T14:55:53+00:00"
+          },
+          {
+            "available": 297,
+            "location": "store_3",
+            "sku": "9887"
+            "updated_at": "2023-08-07T14:55:54+00:00"
+          }]

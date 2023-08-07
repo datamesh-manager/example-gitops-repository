@@ -71,6 +71,15 @@ outputPorts:
                 "type": "timestamp-micros"
             }]
         }]
+    samples:
+      - type: csv
+        model: fulfillment.StockUpdated
+        description: Sample data for the glue database table
+        data: >
+          available,location,sku,updated_at
+          298,store_3,9887,1691419444314123
+          10,store_3,102,1691419444314123
+          297,store_3,9887,1691419444311112
   - id: s3_bucket_stock_updated_v1
     name: 'S3 Bucket: Stock Updates (v1)'
     description: All stock updates represented as a S3 bucket
@@ -112,3 +121,26 @@ outputPorts:
                 }
             }
         }]
+    samples:
+      - type: json
+        model: fulfillment-stock-updated
+        description: Sample data for the s3 bucket
+        data: >
+          [{
+            "available": 298,
+            "location": "store_3",
+            "sku": "9887"
+            "updated_at": "2023-08-07T14:55:52+00:00"
+          },
+          {
+            "available": 10,
+            "location": "store_3",
+            "sku": "102"
+            "updated_at": "2023-08-07T14:55:53+00:00"
+          },
+          {
+            "available": 297,
+            "location": "store_3",
+            "sku": "9887"
+            "updated_at": "2023-08-07T14:55:54+00:00"
+          }]

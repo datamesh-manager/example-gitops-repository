@@ -75,7 +75,7 @@ outputPorts:
       - type: csv
         model: fulfillment.StockUpdated
         description: Sample data for the glue database table
-        data: >
+        data: |
           available,location,sku,updated_at
           298,store_3,9887,1691419444314123
           10,store_3,102,1691419444314123

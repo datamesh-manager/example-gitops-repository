@@ -1,0 +1,58 @@
+dataContractSpecification: 0.9.0
+id: s3_bucket_stock_updated_v1
+info:
+  title: "S3 Bucket: Stock Updates (v1)"
+  version: 1.0.0
+  description: All stock updates represented as a S3 bucket
+  owner: Fulfillment
+  dataProduct: stock_updated
+  outputPort: s3_bucket_stock_updated_v1
+schema:
+  type: json-schema
+  specification: |-
+    [ {
+      "$id" : "https://example.com/fulfillment-stock-updated.schema.json",
+      "$schema" : "http://json-schema.org/draft-07/schema#",
+      "title" : "fulfillment-stock-updated",
+      "type" : "object",
+      "properties" : {
+        "sku" : {
+          "description" : "Stock Keeping Unit",
+          "type" : "string"
+        },
+        "location" : {
+          "description" : "The location (e.g. store) of the shelf warmers",
+          "type" : "string"
+        },
+        "available" : {
+          "description" : "Number of available shelf warmers in the specified location",
+          "type" : "integer"
+        },
+        "updated_at" : {
+          "description" : "Timestamp where this information were created",
+          "type" : "string",
+          "format" : "date-time"
+        }
+      }
+    } ]
+examples:
+- type: json
+  model: fulfillment-stock-updated
+  description: Sample data for the s3 bucket
+  data: |
+    [{
+      "available": 298,
+      "location": "store_3",
+      "sku": "9887",
+      "updated_at": "2023-08-07T14:55:52+00:00"
+    }, {
+      "available": 10,
+      "location": "store_3",
+      "sku": "102",
+      "updated_at": "2023-08-07T14:55:53+00:00"
+    }, {
+      "available": 297,
+      "location": "store_3",
+      "sku": "9887",
+      "updated_at": "2023-08-07T14:55:54+00:00"
+    }]

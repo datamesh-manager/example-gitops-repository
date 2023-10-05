@@ -1,0 +1,39 @@
+dataContractSpecification: 0.9.0
+id: glue_catalog_database_stock_updated_v1
+info:
+  title: "Glue Catalog Database: Stock Updates (v1)"
+  version: 1.0.0
+  description: All stock updates represented as a Glue Catalog table
+  owner: Fulfillment
+  dataProduct: stock_updated
+  outputPort: glue_catalog_database_stock_updated_v1
+schema:
+  type: avro
+  specification: |-
+    [ {
+      "type" : "record",
+      "name" : "StockUpdated",
+      "namespace" : "fulfillment",
+      "fields" : [ {
+        "name" : "available",
+        "type" : "int"
+      }, {
+        "name" : "location",
+        "type" : "string"
+      }, {
+        "name" : "sku",
+        "type" : "string"
+      }, {
+        "name" : "updated_at",
+        "type" : "timestamp-micros"
+      } ]
+    } ]
+examples:
+- type: csv
+  model: fulfillment.StockUpdated
+  description: Sample data for the glue database table
+  data: |
+    available,location,sku,updated_at
+    298,store_3,9887,1691419444314123
+    10,store_3,102,1691419444314123
+    297,store_3,9887,1691419444311112

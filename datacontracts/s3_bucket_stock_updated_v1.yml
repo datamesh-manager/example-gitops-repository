@@ -6,7 +6,6 @@ info:
   description: All stock updates represented as a S3 bucket
   owner: Fulfillment
   dataProduct: stock_updated
-  outputPort: s3_bucket_stock_updated_v1
 schema:
   type: json-schema
   specification: |-

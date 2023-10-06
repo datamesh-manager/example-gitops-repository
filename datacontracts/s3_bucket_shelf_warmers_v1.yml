@@ -6,7 +6,6 @@ info:
   description: All Shelf Warmers represented as a Glue Catalog table
   owner: Fulfillment
   dataProduct: shelf_warmers
-  outputPort: s3_bucket_shelf_warmers_v1
 schema:
   type: json-schema
   specification: |-

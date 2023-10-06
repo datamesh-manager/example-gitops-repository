@@ -6,7 +6,6 @@ info:
   description: All stock updates represented as a Glue Catalog table
   owner: Fulfillment
   dataProduct: stock_updated
-  outputPort: glue_catalog_database_stock_updated_v1
 schema:
   type: avro
   specification: |-

@@ -6,7 +6,6 @@ info:
   description: All Shelf Warmers represented as a Glue Catalog table
   owner: Fulfillment
   dataProduct: shelf_warmers
-  outputPort: glue_catalog_database_shelf_warmers_v1
 schema:
   type: avro
   specification: |-

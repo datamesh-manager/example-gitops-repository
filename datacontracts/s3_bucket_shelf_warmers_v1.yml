@@ -4,7 +4,7 @@ info:
   title: "S3 Bucket: Shelf Warmers (v1)"
   version: 1.0.0
   description: All Shelf Warmers represented as a Glue Catalog table
-  owner: Fulfillment
+  owner: fulfillment
   dataProduct: shelf_warmers
 schema:
   type: json-schema

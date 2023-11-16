@@ -4,7 +4,7 @@ info:
   title: "S3 Bucket: Stock Updates (v1)"
   version: 1.0.0
   description: All stock updates represented as a S3 bucket
-  owner: Fulfillment
+  owner: fulfillment
   dataProduct: stock_updated
 schema:
   type: json-schema

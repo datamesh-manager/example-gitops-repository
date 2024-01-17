@@ -25,8 +25,7 @@ jobs:
               -H "accept: */*" \
               -H "x-api-key: $API_KEY" \
               -H "Content-Type: application/json" \
-              -d "$json" \
-              -f
+              -d "$json"
           done
       - name: Push source systems
         env: 
@@ -42,8 +41,7 @@ jobs:
               -H "accept: */*" \
               -H "x-api-key: $API_KEY" \
               -H "Content-Type: application/json" \
-              -d "$json" \
-              -f
+              -d "$json"
           done
       - name: Push data contracts
         env:
@@ -75,6 +73,5 @@ jobs:
               -H "accept: */*" \
               -H "x-api-key: $API_KEY" \
               -H "Content-Type: application/json" \
-              -d "$json" \
-              -f
+              -d "$json"
           done

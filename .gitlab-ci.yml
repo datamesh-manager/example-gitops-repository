@@ -20,8 +20,7 @@ teams:
           -H "accept: */*" \
           -H "x-api-key: $GITOPS_EXAMPLE_API_KEY" \
           -H "Content-Type: application/json" \
-          -d "$json" \
-          -f
+          -d "$json"
       done
 
 source-systems:
@@ -45,8 +44,7 @@ source-systems:
           -H "accept: */*" \
           -H "x-api-key: $GITOPS_EXAMPLE_API_KEY" \
           -H "Content-Type: application/json" \
-          -d "$json" \
-          -f
+          -d "$json"
       done
 
 data-contracts:
@@ -69,8 +67,7 @@ data-contracts:
           -H "accept: */*" \
           -H "x-api-key: $GITOPS_EXAMPLE_API_KEY" \
           -H "Content-Type: application/json" \
-          -d "$json" \
-          -f
+          -d "$json"
       done
 
 
@@ -95,6 +92,5 @@ data-products:
           -H "accept: */*" \
           -H "x-api-key: $GITOPS_EXAMPLE_API_KEY" \
           -H "Content-Type: application/json" \
-          -d "$json" \
-          -f
+          -d "$json"
       done

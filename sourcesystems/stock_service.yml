@@ -1,6 +1,6 @@
 id: stock-service
 name: Stock Service
-teamId: fulfillment
+owner: fulfillment
 tags:
   - dev
 links:
